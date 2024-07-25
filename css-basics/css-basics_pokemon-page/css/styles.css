@@ -26,6 +26,11 @@
 
 /* your solution */
 
+h1,
+h2 {
+  line-height: 1.2;
+}
+
 /* Task 4: Now we want to give our h1 element more styles to shine! Add the following styles by writing the correct declarations inside of the declaration block of the next CSS rule:
 
 - Change the background color to white
