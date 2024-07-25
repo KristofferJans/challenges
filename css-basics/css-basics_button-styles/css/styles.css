@@ -60,6 +60,7 @@ because then nothing will happen. */
   /*Style me! Can you add a shadow to this button? 
   Maybe play around with the shadow properties, as well? 
   You can even color the shadow, make it bigger or smaller, ... */
+  box-shadow: 5px 5px 20px rgb(156, 16, 142);
 }
 
 /* Feel free to play around with other properties, as well. */
