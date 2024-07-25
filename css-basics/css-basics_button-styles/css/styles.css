@@ -51,6 +51,9 @@ because then nothing will happen. */
 
 .button3 {
   /*Style me! You can test out changing the font, or font size, ...*/
+  font-size: large;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: orange;
 }
 
 .button4 {
