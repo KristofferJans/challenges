@@ -26,5 +26,6 @@ div {
   /* can you give the box round edges with an radius of 8px? */
   border: 1px solid black;
   border-radius: 8px;
+
   /* ✨ feel free to experiment! */
 }
