@@ -116,4 +116,9 @@ ul {
   height: auto;
 }
 
+section {
+  /* ... your existing rules ... */
+  color: black; /* Add this line to set text color to black */
+}
+
 /* Note: After finishing all tasks this class should also work. This means that the image should flexibly adjust its size to the width of the viewport. */
