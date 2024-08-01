@@ -11,6 +11,12 @@ console.clear();
 
 // --v-- write your code here --v--
 
+const title = "This is the title";
+const text = "This is the content";
+const likes = 3;
+const creator = "KikiMiki";
+const isReported = 10 < 9;
+
 // --^-- write your code here --^--
 
 /*
@@ -18,5 +24,14 @@ console.clear();
 */
 
 // --v-- write your code here --v--
+
+console.log(title);
+console.log(text);
+console.log(likes);
+console.log(creator);
+console.log(isReported);
+
+const likesCounter = likes + 1;
+console.log(likesCounter);
 
 // --^-- write your code here --^--
