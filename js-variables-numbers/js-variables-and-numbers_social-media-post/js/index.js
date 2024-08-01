@@ -31,4 +31,7 @@ console.log(likes);
 console.log(creator);
 console.log(isReported);
 
+const likesCounter = likes + 1;
+console.log(likesCounter);
+
 // --^-- write your code here --^--
