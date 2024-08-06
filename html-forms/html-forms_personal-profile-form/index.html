@@ -10,6 +10,53 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section></section>
+    <section>
+      <form>
+        <p>
+          We want to get to know you! Please enter your personal information
+        </p>
+        <!--========================Personal Information========================-->
+        <fieldset class="personal-information">
+          <legend>Personal Information</legend>
+
+          <label for="first-name">First Name</label>
+          <input type="text" name="first-name" id="first-name" />
+
+          <label for="last-name">Last Name</label>
+          <input type="text" name="last-name" id="last-name" />
+
+          <label for="birthday">Your Birthday</label>
+          <input type="date" name="birthday" id="birthday" />
+        </fieldset>
+        <p>
+          Can you tell us a little bit more? We want to annoy you with unwanted
+          ads
+        </p>
+        <!--========================Further Information========================-->
+        <fieldset class="further-information">
+          <legend>Further Information</legend>
+
+          <label for="favorite-color">Favorite Color:</label>
+          <input
+            type="color"
+            value="#E5430F"
+            name="favorite-color"
+            id="favorite-color"
+          />
+
+          <label for="pet-options">What's your favorite pet?</label>
+          <select name="pet-options" id="pet-options">
+            <option value="none" selected disabled hidden>
+              --Please choose an option--
+            </option>
+            <option value="1">Manuka Honey Badger</option>
+            <option value="2">Chicken Turtle</option>
+            <option value="3">Fried Egg Jellyfish</option>
+          </select>
+        </fieldset>
+        <!--========================Submit Button========================-->
+        <button type="submit">Submit</button>
+      </form>
+    </section>
   </body>
 </html>
