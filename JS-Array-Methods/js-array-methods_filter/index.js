@@ -1,3 +1,18 @@
+/*# Array Methods: `filter`
+
+Here are some exercises to recap the array method `filter`. Let's dive directly into it!
+
+## Task
+
+In the `./index.js` file, there is a `cards` array with three objects.
+
+Below this array, you will find a couple of variables (e.g. `onlyCardsWithTagHTML`). 
+They are all initialized with `null`.
+
+And now it's your turn: delete the value `null` and write code such that the variables 
+have a value corresponding to their name. Use `filter` to achieve this goal.
+*/
+
 console.clear();
 
 const cards = [
@@ -22,14 +37,42 @@ const cards = [
     tags: ["js", "next"],
   },
 ];
+/*
+const onlyCardWithIdTwo = cards.filter((card) => {
+  if (card.id === "2") {
+    return true;
+  }
+  return false;
+});
+*/
 
-const onlyCardWithIdTwo = null;
+const onlyCardWithIdTwo = cards.filter((card) => {
+  return card.id === "2";
+});
 
-const allCardsWith3Tags = null;
+//console.log(onlyCardWithIdTwo.length);
+//console.log(onlyCardWithIdTwo);
 
-const allCardsThatAreNotBookmarked = null;
+const allCardsWith3Tags = cards.filter((card) => {
+  return card.tags.length === 3;
+});
 
-const allCardsWithTagsHTMLOrJSThatAreBookmarked = null;
+//console.log(allCardsWith3Tags);
+
+const allCardsThatAreNotBookmarked = cards.filter((card) => {
+  return !card.isBookmarked;
+});
+
+console.log(allCardsThatAreNotBookmarked);
+
+const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter((card) => {
+  return (
+    card.isBookmarked &&
+    (card.tags.includes("html") || card.tags.includes("js"))
+  );
+});
+
+console.log(allCardsWithTagsHTMLOrJSThatAreBookmarked);
 
 export {
   onlyCardWithIdTwo,
