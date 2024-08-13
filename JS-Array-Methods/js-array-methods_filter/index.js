@@ -60,14 +60,14 @@ const allCardsWith3Tags = cards.filter((card) => {
 //console.log(allCardsWith3Tags);
 
 const allCardsThatAreNotBookmarked = cards.filter((card) => {
-  return !card.isBookmarked === true;
+  return !card.isBookmarked;
 });
 
-//console.log(allCardsThatAreNotBookmarked);
+console.log(allCardsThatAreNotBookmarked);
 
 const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter((card) => {
   return (
-    card.isBookmarked === true &&
+    card.isBookmarked &&
     (card.tags.includes("html") || card.tags.includes("js"))
   );
 });
