@@ -1,3 +1,26 @@
+/*# For...of to create a list
+
+We can use loops to iterate through an array and do some stuff with each item. 
+Let's create HTML elements with the help of `for...of` and a given array!
+
+## Task
+
+Looking at the `./js/index.js` , there is
+
+- an `ol` created and appended to the document
+- a string array stored to a variable called `programmingLanguages`.
+
+For each array item, create a list item for the ordered list with its value 
+as visible text. Use the `for...of` loop.
+
+The following hints may guide you:
+
+- What was the property to set the text of an HTML element again?
+- Don't forget to append each list item!
+
+Please switch to the `./js/index.js` file and be a navigator!
+*/
+
 console.clear();
 
 const main = document.querySelector('[data-js="main"]');
@@ -18,5 +41,12 @@ const programmingLanguages = [
 ];
 
 // --v-- write/change code here --v--
+
+for (const languages of programmingLanguages) {
+  // console.log(languages);
+  const listItem = document.createElement("li");
+  listItem.textContent = languages;
+  ol.append(listItem);
+}
 
 // --^-- write/change code here --^--
