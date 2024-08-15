@@ -102,9 +102,23 @@ console.log(everyAnimalHasMoreThanTwoLetters);
 // Option 1: Concatenate all characters with `reduce()` and check for the `length` property of the result.
 // Option 2: Use `map()` to create an array with the length values of all strings,
 // 				then sum them up with `reduce()` (keyword: method chaining)
-const sumOfAllAnimalCharacters = animalStrings.reduce((a, b) => a + b);
 
-console.log(sumOfAllAnimalCharacters.length);
+// Option 1
+const sumOfAllAnimalCharacters = animalStrings.reduce(
+  (a, b) => a + b.length,
+  0
+);
+
+console.log(sumOfAllAnimalCharacters);
+
+// Option 2
+const sumAnimals = animalStrings
+  .map((animal) => {
+    return animal.length;
+  })
+  .reduce((a, b) => a + b);
+
+console.log(sumAnimals);
 
 export {
   hippoExists,
