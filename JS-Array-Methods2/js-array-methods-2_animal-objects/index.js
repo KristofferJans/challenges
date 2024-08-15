@@ -77,10 +77,22 @@ const animals = [
   { name: "rhino", weight: 2000, continents: ["Asia", "Africa"] },
 ];
 
-// Hint: Besides the array method, check out the string method `startsWith()`.
-const firstAnimalStartingWithLetterG = null;
+// ===================================================================================
 
-const indexOfAnimalWithNameLongerFive = null;
+// Hint: Besides the array method, check out the string method `startsWith()`.
+const firstAnimalStartingWithLetterG = animals.find((animal) =>
+  animal.name.startsWith("g")
+);
+console.log("firstAnimalStartingWithLetterG", firstAnimalStartingWithLetterG);
+
+// ===================================================================================
+
+const indexOfAnimalWithNameLongerFive = animals.findIndex(
+  (animal) => animal.name.length > 5
+);
+console.log("indexOfAnimalWithNameLongerFive", indexOfAnimalWithNameLongerFive);
+
+// ===================================================================================
 
 // Note:
 // - Sorting strings is slightly more complicated than sorting numbers.
@@ -91,22 +103,113 @@ const indexOfAnimalWithNameLongerFive = null;
 // Hint: sort() mutates the original array, which is bad.
 // -> Use animals.slice().sort(...) to make a copy (and the tests work).
 
-const animalsSortedAlphabetically = null;
+// ===================================================================================
 
-const animalsSortedByWeightStartingWithLowest = null;
+const animalsSortedAlphabetically = animals.slice().sort((a, b) => {
+  if (a.name < b.name) {
+    return -1;
+  }
+  if (a.name > b.name) {
+    return 1;
+  }
+  return 0;
+});
 
-const animalsSortedByWeightReversed = null;
+console.log("animalsSortedAlphabetically", animalsSortedAlphabetically);
 
-const animalWithWeightMoreThanFivehundredExists = null;
+// ===================================================================================
+
+const animalsSortedByWeightStartingWithLowest = animals.slice().sort((a, b) => {
+  if (a.weight < b.weight) {
+    return -1;
+  }
+  if (a.weight > b.weight) {
+    return 1;
+  }
+  return 0;
+});
+console.log(
+  "animalsSortedByWeightStartingWithLowest",
+  animalsSortedByWeightStartingWithLowest
+);
+
+// ===================================================================================
+
+const animalsSortedByWeightReversed = animals
+  .slice()
+  .sort((a, b) => {
+    if (a.weight < b.weight) {
+      return -1;
+    }
+    if (a.weight > b.weight) {
+      return 1;
+    }
+    return 0;
+  })
+  .reverse();
+
+console.log("animalsSortedByWeightReversed", animalsSortedByWeightReversed);
+
+// ===================================================================================
+
+const animalWithWeightMoreThanFivehundredExists = animals.find(
+  (animal) => animal.weight > 500
+);
+
+console.log(
+  "animalWithWeightMoreThanFivehundredExists?",
+  animalWithWeightMoreThanFivehundredExists
+);
+
+// ===================================================================================
 
 // Hint: Filter for Europe first, then check every animal for its weight.
-const allAnimalsInEuropeWeighLessThanOnehundred = null;
+const allAnimalsInEuropeWeighLessThanOnehundred = animals
+  .filter((animal) => {
+    return animal.continents.includes("Europe");
+  })
+  .every((animal) => animal.weight < 100);
+
+console.log(
+  "allAnimalsInEuropeWeighLessThanOnehundred",
+  allAnimalsInEuropeWeighLessThanOnehundred
+);
+
+// ===================================================================================
 
 // Hint: filter + map + reduce
-const weightOfAllAnimalsInAfrica = null;
+const weightOfAllAnimalsInAfrica = animals
+  .filter((animal) => {
+    return animal.continents.includes("Africa");
+  })
+  .map((animal) => {
+    return animal.weight;
+  })
+  .reduce((a, b) => a + b);
+
+console.log(
+  `The weight of all animals in Africa is ${weightOfAllAnimalsInAfrica}kg `
+);
+
+// ===================================================================================
 
 // Hint: As above, but divided by the number of animals in Africa.
-const averageWeightOfAllAnimalsInAfrica = null;
+const averageWeightOfAllAnimalsInAfrica =
+  animals
+    .filter((animal) => {
+      return animal.continents.includes("Africa");
+    })
+    .map((animal) => {
+      return animal.weight;
+    })
+    .reduce((a, b) => a + b, 0) /
+  animals.filter((animal) => animal.continents.includes("Africa")).length;
+
+console.log(
+  `The average weight of the animals in Africa is ${averageWeightOfAllAnimalsInAfrica}kg `
+);
+
+// ===================================================================================
 
 export {
   firstAnimalStartingWithLetterG,
