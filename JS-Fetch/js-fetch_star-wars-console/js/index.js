@@ -29,14 +29,14 @@ async function fetchData() {
     const response = await fetch(url);
     console.log("response", response);
 
-    const responseJSON = await response.json();
-    console.log("responseJSON", responseJSON);
-
     if (!response.ok) {
       // If there is an ERROR
       console.error("Bad Response", response.status);
       return;
     }
+
+    const responseJSON = await response.json();
+    console.log("responseJSON", responseJSON);
 
     console.log("R2-D2´s Eye Color:", responseJSON.results[2].eye_color);
 
