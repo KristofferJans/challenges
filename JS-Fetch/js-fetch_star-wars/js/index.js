@@ -47,6 +47,12 @@ async function fetchDataAndRender() {
     const response = await fetch(url); // access the data from the star wars api
     console.log("response", response); // consoloe logging the raw data from our api
 
+    if (!response.ok) {
+      // If there is an ERROR
+      console.error("Sheesh Bad Response", response.status);
+      return;
+    }
+
     const responseJSON = await response.json(); //converting our response to JSON to gain access to the data we want
     console.log("responseJSON", responseJSON); // console logging the actual data
 
@@ -57,12 +63,6 @@ async function fetchDataAndRender() {
       const cards = Card(dataItem);
       renderElement(cards);
     });
-
-    if (!response.ok) {
-      // If there is an ERROR
-      console.error("Sheesh Bad Response", response.status);
-      return;
-    }
   } catch (error) {
     console.log("Sheeesh! Something wrong happened! - ", error);
   }
