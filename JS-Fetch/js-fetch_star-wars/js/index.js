@@ -41,6 +41,29 @@ fetchDataAndRender();
 
 // --v-- your code below this line --v--
 
-function fetchDataAndRender() {
-  fetch(); // ?
+async function fetchDataAndRender() {
+  try {
+    const url = "https://swapi.py4e.com/api/people";
+    const response = await fetch(url); // access the data from the star wars api
+    console.log("response", response); // consoloe logging the raw data from our api
+
+    const responseJSON = await response.json(); //converting our response to JSON to gain access to the data we want
+    console.log("responseJSON", responseJSON); // console logging the actual data
+
+    const dataItems = responseJSON.results;
+    console.log("dataItems", dataItems);
+
+    dataItems.forEach((dataItem) => {
+      const cards = Card(dataItem);
+      renderElement(cards);
+    });
+
+    if (!response.ok) {
+      // If there is an ERROR
+      console.error("Sheesh Bad Response", response.status);
+      return;
+    }
+  } catch (error) {
+    console.log("Sheeesh! Something wrong happened! - ", error);
+  }
 }
