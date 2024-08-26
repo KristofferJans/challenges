@@ -1,4 +1,4 @@
-import Img from "./Img.jsx";
+import Image from "./Image.jsx";
 import avatar from "../assets/avatar.jpg";
 
 export default function Avatar() {
@@ -8,7 +8,7 @@ export default function Avatar() {
       onClick={() => console.log("I could toggle a profile!")}
       aria-label="toggle profile"
     >
-      <Img src={avatar} alt="avatar"></Img>
+      <Image src={avatar} alt="avatar" />
     </button>
   );
 }

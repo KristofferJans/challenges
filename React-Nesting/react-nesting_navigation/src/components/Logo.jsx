@@ -1,10 +1,10 @@
-import Img from "./Img.jsx";
+import Image from "./Image.jsx";
 import logo from "../assets/logo.jpg";
 
 export default function Logo() {
   return (
     <a href="#">
-      <Img src={logo} alt="logo"></Img>
+      <Image src={logo} alt="logo" />
     </a>
   );
 }
