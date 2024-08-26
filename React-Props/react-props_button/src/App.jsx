@@ -1,5 +1,15 @@
 import "./App.css";
 
 export default function App() {
-  return <h1>Replace me with your component!</h1>;
+  return <Button text="sheesh" color="blue" />;
+}
+
+function Button({ color, disabled, text }) {
+  return (
+    <div>
+      <button {...(disabled ? isDisabled : "")} style={{ color: color }}>
+        {text}
+      </button>
+    </div>
+  );
 }
