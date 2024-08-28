@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./Counter.css";
 
 export default function Counter({ onIncrease, onDecrease }) {
