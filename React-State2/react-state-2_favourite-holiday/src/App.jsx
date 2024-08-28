@@ -7,16 +7,17 @@ export default function App() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const holidayInput = event.target.elements.holiday.value;
-    const dateInput = event.target.elements.date.value;
+    const holidayInput = event.target.holiday.value;
+    const dateInput = event.target.date.value;
 
     setHoliday(holidayInput);
     setDate(dateInput);
 
-    event.target.elements.holiday.value = "";
-    event.target.elements.date.value = "";
+    event.target.holiday.value = "";
+    event.target.date.value = "";
 
-    event.target.elements.holiday.focus();
+    event.target.reset();
+    event.target.holiday.focus();
   }
 
   return (
