@@ -1,4 +1,3 @@
-
 import "./styles.css";
 import Card from "./components/Card";
 import Title from "./components/Title";
@@ -9,8 +8,23 @@ export default function App() {
     <main className="app">
       <Title text="ClientBoard" />
       <div className="app__card-grid">
-        <Card user={USERS[0]} />
+        {USERS.map((user) => (
+          <Card key={user.id} user={user} />
+        ))}
       </div>
     </main>
   );
 }
+
+// export default function App() {
+//   return (
+//     <main className="app">
+//       <Title text="ClientBoard" />
+//       <div className="app__card-grid">
+//         {USERS.map(({ id, name, roles, about }) => (
+//           <Card key={id} name={name} roles={roles} about={about} />
+//         ))}
+//       </div>
+//     </main>
+//   );
+// }
