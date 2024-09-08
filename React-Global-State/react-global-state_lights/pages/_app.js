@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }) {
 
   function handleToggle(id) {
     console.log("Switch");
+
     setLight((prevLights) =>
       prevLights.map((light) =>
         light.id === id ? { ...light, isOn: !light.isOn } : light
@@ -25,10 +26,17 @@ export default function App({ Component, pageProps }) {
     );
   }
 
+  const turnedOnLights = light.filter((light) => light.isOn).length;
+
   return (
     <Layout>
       <GlobalStyle />
-      <Component {...pageProps} light={light} handleToggle={handleToggle} />
+      <Component
+        {...pageProps}
+        light={light}
+        handleToggle={handleToggle}
+        turnedOnLights={turnedOnLights}
+      />
     </Layout>
   );
 }
