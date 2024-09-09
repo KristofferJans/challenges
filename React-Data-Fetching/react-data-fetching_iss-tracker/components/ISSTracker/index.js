@@ -22,7 +22,7 @@ export default function ISSTracker() {
     return res.json();
   };
   const { data, mutate, error, isLoading } = useSWR(URL, fetcher, {
-    refreshInterval: 1000,
+    refreshInterval: 5000,
   });
 
   if (error) return <div>failed to load</div>;
