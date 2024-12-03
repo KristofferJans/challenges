@@ -247,7 +247,37 @@ width, etc. */
 /* Replace this comment with your media query. */
 /* --- */
 
+@media (min-width: 769px) {
+  .card-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-section > * {
+    width: 45%;
+  }
+}
+
 /* Media Query Desktop */
 /* --- */
 /* Replace this comment with your media query. */
 /* --- */
+
+@media screen and (min-width: 1024px) {
+  body,
+  .main-header,
+  .navbar {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .card-section {
+    overflow-x: hidden;
+  }
+  .main-content {
+    padding: 0;
+  }
+  .product-card.--forest {
+    width: 100vw;
+  }
+}
