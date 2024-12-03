@@ -1,3 +1,8 @@
+<!-- - First and last name are required and are allowed to have at least 4 and up to 30 characters.
+- The user needs to be at least 14 years old.
+- We need a correct email address (i.e. including an `@` symbol) for contacting the user.
+- It's necessary that the user has read the terms of service and agrees to them. -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,6 +37,9 @@
             name="firstName"
             id="first-name"
             placeholder="Your first name"
+            minlength="4"
+            maxlength="30"
+            required
           />
 
           <label for="last-name">Last Name</label>
@@ -40,13 +48,16 @@
             name="lastName"
             id="last-name"
             placeholder="Your last name"
+            minlength="4"
+            maxlength="30"
+            required
           />
 
           <label for="age">Age</label>
-          <input type="number" name="age" id="age" />
+          <input type="number" name="age" id="age" min="14" required />
 
           <label for="email">Email</label>
-          <input type="text" name="email" id="email" />
+          <input type="email" name="email" id="email" required />
         </fieldset>
 
         <fieldset>
@@ -88,6 +99,7 @@
           <label for="terms-of-service">
             <input
               type="checkbox"
+              required
               name="terms-of-service"
               id="terms-of-service"
             />
